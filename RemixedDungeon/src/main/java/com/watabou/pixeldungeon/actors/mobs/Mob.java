@@ -263,11 +263,11 @@ public abstract class Mob extends Char {
 	}
 
 	@Override
-	public void add(Buff buff) {
+	public boolean add(Buff buff) {
 		super.add(buff);
 
 		if (!GameScene.isSceneReady()) {
-			return;
+			return true;
 		}
 
 		if (buff instanceof Amok) {
@@ -280,6 +280,7 @@ public abstract class Mob extends Char {
 			setState(MobAi.getStateByClass(Sleeping.class));
 			postpone(Sleep.SWS);
 		}
+		return true;
 	}
 
 	public boolean canAttack(@NotNull Char enemy) {
@@ -546,9 +547,9 @@ public abstract class Mob extends Char {
 			return true;
 		}
 
-		if(hasBuff(Amok.class) || chr.hasBuff(Amok.class)) {return false;}
-
-		if(getEnemy() == chr) {return false;}
+		if(hasBuff(Amok.class) || chr.hasBuff(Amok.class)) {
+			return false;
+		}
 
 		if(getOwnerId() == chr.getId()) {
 			return true;
@@ -558,10 +559,17 @@ public abstract class Mob extends Char {
 			return true;
 		}
 
+		if(getEnemy() == chr) {
+			return false;
+		}
+
+		if(getOwnerId()!=getId() && getOwner().friendly(chr)) {
+			return true;
+		}
+
 		if(chr instanceof Hero) {
 			return chr.getHeroClass().friendlyTo(getEntityKind());
 		}
-
 
 		return !this.fraction.isEnemy(chr.fraction);
 	}

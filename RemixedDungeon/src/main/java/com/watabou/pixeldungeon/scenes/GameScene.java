@@ -35,6 +35,7 @@ import com.nyrds.platform.audio.Music;
 import com.nyrds.platform.audio.Sample;
 import com.nyrds.platform.game.Game;
 import com.nyrds.platform.util.TrackedRuntimeException;
+import com.nyrds.util.ModError;
 import com.nyrds.util.ModdingMode;
 import com.nyrds.util.Util;
 import com.watabou.noosa.Camera;
@@ -101,6 +102,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
+
+import lombok.var;
 
 public class GameScene extends PixelScene {
 
@@ -457,6 +460,17 @@ public class GameScene extends PixelScene {
 
             GLog.debug(Dungeon.hero.immunities().toString());
             //GLog.toFile(StringsManager.missingStrings.toString());
+
+            for (var lo : level.getAllLevelObjects()) {
+                int pos = lo.getPos();
+                if(level.solid[pos]) {
+                    throw new ModError(Utils.format("%s on a solid cell %d", lo.getEntityKind(), pos));
+                }
+
+                if(level.pit[pos]) {
+                    throw new ModError(Utils.format("%s on a pit cell %d", lo.getEntityKind(), pos));
+                }
+            }
         }
 
         if(level instanceof TestLevel) {
