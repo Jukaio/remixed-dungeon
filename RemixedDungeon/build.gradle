@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+ext {
+    gdxVersion = "1.10.0";
+}
+
 ext.getApiField = { name ->
     def stringsFile = "RemixedDungeon/src/main/res/values/strings_api_signature.xml"
     return new XmlParser().parse(stringsFile).string.find { it.@name.equals name }.text()
@@ -123,11 +127,6 @@ dependencies {
     implementation 'org.luaj:luaj-jse:3.0.1'
     implementation 'info.guardianproject.netcipher:netcipher:1.2'
 
-
-
-    //libgdxImplementation 'com.fancydep.desktop:1.0.7'
-
-
     androidImplementation 'com.google.android.ads.consent:consent-library:1.0.8'
 
 
@@ -164,6 +163,10 @@ dependencies {
     huaweiImplementation 'com.huawei.hms:ads-lite:13.4.30.301'
     huaweiImplementation 'com.huawei.hms:hianalytics:5.0.0.300'
     huaweiImplementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
+
+    libgdxImplementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+    libgdxImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    libgdxImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
 }
 
 if (getGradle().getStartParameter().getTaskRequests()
