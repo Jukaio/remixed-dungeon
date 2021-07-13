@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels.objects;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -17,7 +17,7 @@ public class CustomObject extends Deco {
 
     private LuaScript script;
 
-    @Keep
+    //@Keep
     CustomObject() {
     }
 

@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.utils;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.watabou.pixeldungeon.levels.Level;
@@ -37,7 +37,7 @@ public class Position implements Bundlable {
 		y = pos.y;
 	}
 
-	@Keep
+	//@Keep
 	public Position() {
 	}
 

@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.mechanics.buffs;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -36,7 +36,7 @@ public class CustomBuff extends Buff {
 
     private LuaScript script;
 
-    @Keep
+    //@Keep
     public CustomBuff() {
     }
 

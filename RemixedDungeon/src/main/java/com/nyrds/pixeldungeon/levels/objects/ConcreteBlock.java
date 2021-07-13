@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels.objects;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.pixeldungeon.ml.R;
@@ -23,7 +23,7 @@ public class ConcreteBlock extends LevelObject {
 	@Setter
 	private int requiredStr = 10;
 
-	@Keep
+	//@Keep
 	public ConcreteBlock() {
 		this(-1);
 	}

@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels.objects;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -67,7 +67,7 @@ public class Trap extends LevelObject {
 	@Packable(defaultValue = "-1")
 	private int usedImageIndex;
 
-	@Keep
+	//@Keep
 	public Trap() {
 		this(Level.INVALID_CELL);
 	}

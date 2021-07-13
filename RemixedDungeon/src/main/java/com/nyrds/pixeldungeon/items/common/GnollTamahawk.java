@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.items.common;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.watabou.pixeldungeon.actors.Actor;
@@ -21,7 +21,7 @@ public class GnollTamahawk extends Tamahawk {
     @Packable
     private int imageIndex;
 
-    @Keep
+    //@Keep
     public GnollTamahawk() {
         this(1);
     }

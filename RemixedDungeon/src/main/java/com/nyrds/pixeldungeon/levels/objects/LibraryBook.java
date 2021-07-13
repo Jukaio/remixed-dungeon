@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels.objects;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.pixeldungeon.ml.R;
 import com.nyrds.pixeldungeon.windows.WndLibrary;
@@ -16,12 +16,12 @@ import org.json.JSONObject;
  */
 public class LibraryBook extends LevelObject {
 
-	@Keep
+	//@Keep
 	public LibraryBook(){
 		super(-1);
 	}
 
-	@Keep
+	//@Keep
 	public LibraryBook(int pos) {
 		super(pos);
 	}

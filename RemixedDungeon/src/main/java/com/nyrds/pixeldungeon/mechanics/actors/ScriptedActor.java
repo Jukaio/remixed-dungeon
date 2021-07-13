@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.mechanics.actors;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -18,7 +18,7 @@ public class ScriptedActor extends Actor {
 	@Packable
 	private String sourceFile;
 
-	@Keep
+	//@Keep
 	public ScriptedActor() {
 	}
 
@@ -37,7 +37,7 @@ public class ScriptedActor extends Actor {
 
 		boolean ret = actor.get("act").call().checkboolean();
 		spend((float) actor.get("actionTime").call().checkdouble());
-
+ 
 		return ret;
 	}
 

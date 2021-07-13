@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.items;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -39,7 +39,7 @@ public class CustomItem extends EquipableItem {
     private int price;
     private float heapScale;
 
-    @Keep
+    //@Keep
     public CustomItem() {
     }
 

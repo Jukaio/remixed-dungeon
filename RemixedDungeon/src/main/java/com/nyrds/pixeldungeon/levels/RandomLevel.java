@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.pixeldungeon.items.common.ItemFactory;
@@ -31,7 +31,7 @@ public class RandomLevel extends RegularLevel {
 	@Packable
 	private int mobsSpawned = 0;
 
-	@Keep
+	//@Keep
 	public RandomLevel() {
 		super();
 	}

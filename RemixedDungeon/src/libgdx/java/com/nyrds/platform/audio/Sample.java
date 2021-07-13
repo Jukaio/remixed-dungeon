@@ -63,7 +63,6 @@ public enum Sample {
 
     public void reset() {
 
-
     }
 
     public void pause() {

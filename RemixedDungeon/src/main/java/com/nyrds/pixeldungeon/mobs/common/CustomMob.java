@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.mobs.common;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.Packable;
 import com.nyrds.lua.LuaEngine;
@@ -48,7 +48,7 @@ public class CustomMob extends MultiKindMob implements IZapper {
 	private boolean immortal = false;
 
 	//For restoreFromBundle
-	@Keep
+	//@Keep
 	public CustomMob() {
 	}
 

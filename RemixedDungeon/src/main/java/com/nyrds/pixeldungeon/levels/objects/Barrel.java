@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels.objects;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.pixeldungeon.ml.R;
 import com.nyrds.platform.audio.Sample;
@@ -22,7 +22,7 @@ public class Barrel extends LevelObject {
 
 	private boolean burned = false;
 
-	@Keep
+	//@Keep
 	public Barrel() {
 		this(-1);
 	}

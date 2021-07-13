@@ -1,6 +1,6 @@
 package com.nyrds.pixeldungeon.levels;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 import com.nyrds.pixeldungeon.items.common.ItemFactory;
 import com.nyrds.pixeldungeon.levels.objects.LevelObjectsFactory;
@@ -29,7 +29,7 @@ public class PredesignedLevel extends CustomLevel {
 
 	private final LayerId[] descOrder = {LayerId.Roof_Deco,LayerId.Roof_Base,LayerId.Deco2,LayerId.Deco,LayerId.Base};
 
-	@Keep
+	//@Keep
 	public PredesignedLevel() {
 		super();
 	}

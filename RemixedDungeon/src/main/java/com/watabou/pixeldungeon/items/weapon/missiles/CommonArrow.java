@@ -1,11 +1,11 @@
 
 package com.watabou.pixeldungeon.items.weapon.missiles;
 
-import androidx.annotation.Keep;
+//import androidx.annotation.Keep;
 
 public class CommonArrow extends Arrow {
 
-	@Keep
+	//@Keep
 	public CommonArrow() {
 		this( 1 );
 	}
