@@ -17,8 +17,28 @@
 
 package com.nyrds.platform.game;
 
-public class Game  {
+import com.nyrds.pixeldungeon.support.Iap;
+import com.nyrds.pixeldungeon.support.PlayGames;
+import com.nyrds.platform.LibgdxActivity;
+import com.watabou.pixeldungeon.scenes.TitleScene;
+
+public class Game extends LibgdxActivity {
     public static String version = "";
+    public static boolean softPaused;
+    public static int versionCode;
+
+    private static Game instance;
+    public PlayGames playGames;
+    public Iap iap;
+    
+    // Actual size of the screen
+    private static int width;
+    private static int height;
+
+    private static volatile boolean paused = true;
+
+    public Game(Class<TitleScene> titleSceneClass) {
+    }
 
     public static String getVar(int id) {
         throw new RuntimeException("Stub!");
@@ -27,12 +47,11 @@ public class Game  {
         throw new RuntimeException("Stub!");
     }
 
-    // Actual size of the screen
-    private static int width;
-    private static int height;
-
     public static void toast(final String text, final Object... args) {
         throw new RuntimeException("Stub!");
+    }
+    public synchronized static Game instance() {
+        return instance;
     }
     public static int width() {
         return width;
@@ -48,5 +67,25 @@ public class Game  {
 
     private static void height(int height) {
         Game.height = height;
+    }
+
+    public static boolean isPaused() {
+        return paused;
+    }
+
+    public static void shutdown() {
+    }
+
+    public static boolean smallResScreen() {
+        return false;
+    }
+
+    public static void vibrate(int i) {
+    }
+
+    public static void syncAdsState() {
+    }
+
+    public void doRestart() {
     }
 }

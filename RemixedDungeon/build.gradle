@@ -167,6 +167,13 @@ dependencies {
     libgdxImplementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     libgdxImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
     libgdxImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    libgdxImplementation 'com.appodeal.ads.sdk:core:2.9.2'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:adcolony:2.9.2.11'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:applovin:2.9.2.12'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:bidmachine:2.9.2.7'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:ironsource:2.9.2.11'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:my_target:2.9.2.11'
+    libgdxImplementation 'com.appodeal.ads.sdk.networks:unity_ads:2.9.2.8'
 }
 
 if (getGradle().getStartParameter().getTaskRequests()

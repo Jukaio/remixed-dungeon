@@ -10,4 +10,12 @@ public enum Music  {
         throw new RuntimeException("Stub!");
     }
 
+    public void resume() {
+    }
+
+    public void enable(boolean value) {
+    }
+
+    public void play(String theme, boolean b) {
+    }
 }

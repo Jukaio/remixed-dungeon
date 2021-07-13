@@ -3,6 +3,8 @@ package com.nyrds.platform.audio;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -15,6 +17,7 @@ import com.badlogic.gdx.audio.AudioDevice;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Pool;
+import com.nyrds.util.ModdingMode;
 
 public enum Sample {
     INSTANCE;
@@ -46,7 +49,12 @@ public enum Sample {
     public static final int MAX_STREAMS = 8;
     String playOnComplete;
 
-    protected Pool<Sound> pool = new Pool<Sound>(MAX_STREAMS);
+    protected Pool<Sound> pool = new Pool<Sound>(MAX_STREAMS) {
+        @Override
+        protected Sound newObject() {
+            return null;
+        }
+    };
     //protected SoundPool pool =
     //        new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
 
@@ -75,26 +83,7 @@ public enum Sample {
 
     private void load(String asset) {
         //Sound sample = Gdx.audio.newSound(Gdx.files.internal(asset)); // load sound. GDX loading etc
-        if (!ids.containsKey(asset) && !missingAssets.contains(asset)) {
-            try {
-                String assetFile = ModdingMode.getSoundById("sound/" + asset);
-                int streamID;
 
-                File file = ModdingMode.getFile(assetFile);
-                if (file != null && file.exists()) {
-                    streamID = pool.load(file.getAbsolutePath(), 1);
-                } else {
-                    streamID = fromAsset(manager, assetFile);
-                }
-
-                ids.put(asset, streamID);
-
-            } catch (IOException e) {
-                missingAssets.add(asset);
-                playOnComplete = null;
-                EventCollector.logException(e,asset);
-            }
-        }
     }
 
 

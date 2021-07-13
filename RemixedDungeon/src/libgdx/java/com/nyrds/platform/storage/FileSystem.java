@@ -31,15 +31,7 @@ public class FileSystem {
     @NotNull
     static public File[] listExternalStorage() {
 
-        File storageDir = getContext().getExternalFilesDir(null);
-        if (storageDir != null) {
-            File[] ret = storageDir.listFiles();
-            if(ret != null) {
-                return ret;
-            }
-        }
-
-        return new File[0];
+        return null;
     }
 
     static public OutputStream getOutputStream(String filename) throws FileNotFoundException {
@@ -60,8 +52,8 @@ public class FileSystem {
     }
 
     static public File getExternalStorageFile(String fileName) {
-        File storageDir = getContext().getExternalFilesDir(null);
-        return new File(storageDir, fileName);
+        // TODO: Libgdx filesystem
+        return null;
     }
 
     static public String getExternalStorageFileName(String fname) {

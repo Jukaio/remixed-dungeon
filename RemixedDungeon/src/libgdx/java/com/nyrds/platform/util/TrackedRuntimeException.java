@@ -6,4 +6,9 @@ public class TrackedRuntimeException extends RuntimeException {
         throw new RuntimeException("Stub!");
     }
 
+    public TrackedRuntimeException(String format, Exception e) {
+    }
+
+    public TrackedRuntimeException(Exception e) {
+    }
 }
