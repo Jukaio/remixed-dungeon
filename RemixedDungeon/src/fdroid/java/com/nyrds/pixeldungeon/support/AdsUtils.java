@@ -32,51 +32,51 @@ public class AdsUtils {
     }
 
     static int bannerIndex() {
-        int childs = Game.instance().getLayout().getChildCount();
-        for (int i = 0; i < childs; ++i) {
-            View view = Game.instance().getLayout().getChildAt(i);
-            if (view instanceof WebView || view instanceof BannerView) {
-                return i;
-            }
-        }
+//        int childs = Game.instance().getLayout().getChildCount();
+//        for (int i = 0; i < childs; ++i) {
+//            View view = Game.instance().getLayout().getChildAt(i);
+//            if (view instanceof WebView || view instanceof BannerView) {
+//                return i;
+//            }
+//        }
         return -1;
     }
 
     static void updateBanner(final View view) {
-        Game.instance().runOnUiThread(() -> {
-
-            int index = bannerIndex();
-            if (index >= 0) {
-
-                View adview = Game.instance().getLayout().getChildAt(index);
-                if(adview == view) {
-                    return;
-                }
-
-                removeBannerView(index, adview);
-            }
-
-            try {
-                Game.instance().getLayout().addView(view, 0);
-            } catch (IllegalStateException e) {
-                EventCollector.logException(e);
-            }
-        });
+//        Game.instance().runOnUiThread(() -> {
+//
+//            int index = bannerIndex();
+//            if (index >= 0) {
+//
+//                View adview = Game.instance().getLayout().getChildAt(index);
+//                if(adview == view) {
+//                    return;
+//                }
+//
+//                removeBannerView(index, adview);
+//            }
+//
+//            try {
+//                Game.instance().getLayout().addView(view, 0);
+//            } catch (IllegalStateException e) {
+//                EventCollector.logException(e);
+//            }
+//        });
     }
 
     public static void removeTopBanner() {
-        Game.instance().runOnUiThread(() -> {
-            int index = bannerIndex();
-            if (index >= 0) {
-
-                View adview = Game.instance().getLayout().getChildAt(index);
-
-                removeBannerView(index, adview);
-            }
-        });
+//        Game.instance().runOnUiThread(() -> {
+//            int index = bannerIndex();
+//            if (index >= 0) {
+//
+//                View adview = Game.instance().getLayout().getChildAt(index);
+//
+//                removeBannerView(index, adview);
+//            }
+//        });
     }
 
     public static void removeBannerView(int index, View adview) {
-        Game.instance().getLayout().removeViewAt(index);
+//        Game.instance().getLayout().removeViewAt(index);
     }
 }

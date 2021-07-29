@@ -46,23 +46,25 @@ public class Util {
 	}
 
 	static public boolean isConnectedToInternet() {
-		boolean connectionStatus;
+//		boolean connectionStatus;
 
-		ConnectivityManager connectivityManager
-				= (ConnectivityManager) Game.instance().getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-		connectionStatus = activeNetworkInfo != null && activeNetworkInfo.isConnected();
-		return connectionStatus;
+//		ConnectivityManager connectivityManager
+//				= (ConnectivityManager) Game.instance().getSystemService(Context.CONNECTIVITY_SERVICE);
+//		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+//		connectionStatus = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+//		return connectionStatus;
+		return false;
 	}
 
 	@SneakyThrows
 	static public String getSignature(Context context) {
-		PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
-		MessageDigest md = MessageDigest.getInstance("SHA-1");
-		for (Signature signature : packageInfo.signatures) {
-			md.update(signature.toByteArray());
-		}
-		return Base64.encodeToString(md.digest(), Base64.URL_SAFE|Base64.NO_WRAP);
+//		PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
+//		MessageDigest md = MessageDigest.getInstance("SHA-1");
+//		for (Signature signature : packageInfo.signatures) {
+//			md.update(signature.toByteArray());
+//		}
+//		return Base64.encodeToString(md.digest(), Base64.URL_SAFE|Base64.NO_WRAP);
+		return null;
 	}
 
 	public static int signum(int x) {

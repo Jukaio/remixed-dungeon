@@ -26,53 +26,53 @@ class OfflineAds {
 			"<div align=\"right\"height=100%%>.</div>";
 
 	static void displayBanner() {
-		if (Util.isDebug()) {
-			Game.instance().runOnUiThread(() -> {
-				LinearLayout layout = Game.instance().getLayout();
-				if (layout.getChildCount() == 1) {
-
-					WebView adView = new WebView(Game.instance());
-
-					int adViewHeight = Math.max(50, layout.getHeight() / 10);
-
-					ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, adViewHeight);
-					adView.setLayoutParams(params);
-
-					adView.loadDataWithBaseURL(null, Utils.format(adTemplate, "Рекламко"), "text/html", "utf-8", null);
-					Game.instance().getLayout().addView(adView, 0);
-					GameLoop.setNeedSceneRestart();
-				}
-			});
-		}
+//		if (Util.isDebug()) {
+//			Game.instance().runOnUiThread(() -> {
+//				LinearLayout layout = Game.instance().getLayout();
+//				if (layout.getChildCount() == 1) {
+//
+//					WebView adView = new WebView(Game.instance());
+//
+//					int adViewHeight = Math.max(50, layout.getHeight() / 10);
+//
+//					ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, adViewHeight);
+//					adView.setLayoutParams(params);
+//
+//					adView.loadDataWithBaseURL(null, Utils.format(adTemplate, "Рекламко"), "text/html", "utf-8", null);
+//					Game.instance().getLayout().addView(adView, 0);
+//					GameLoop.setNeedSceneRestart();
+//				}
+//			});
+//		}
 	}
 
 	static void displayIsAd(final InterstitialPoint work) {
-		if (Util.isDebug()) {
-			Game.instance().runOnUiThread(() -> {
-
-				final AlertDialog.Builder alert = new AlertDialog.Builder(Game.instance());
-
-				WebView adView = new WebView(Game.instance());
-
-				ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-				adView.setLayoutParams(params);
-
-				adView.loadDataWithBaseURL(null, Utils.format(isAdTemplate, "Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко"), "text/html", "utf-8", null);
-				alert.setView(adView);
-				alert.setCustomTitle(null);
-
-				final AlertDialog dialog = alert.create();
-
-				dialog.setCanceledOnTouchOutside(true);
-				dialog.setOnCancelListener(dialog1 -> {
-					dialog1.dismiss();
-					work.returnToWork(true);
-				});
-				dialog.show();
-			}
-			);
-		} else {
-			work.returnToWork(true);
-		}
+//		if (Util.isDebug()) {
+//			Game.instance().runOnUiThread(() -> {
+//
+//				final AlertDialog.Builder alert = new AlertDialog.Builder(Game.instance());
+//
+//				WebView adView = new WebView(Game.instance());
+//
+//				ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//				adView.setLayoutParams(params);
+//
+//				adView.loadDataWithBaseURL(null, Utils.format(isAdTemplate, "Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко Рекламко"), "text/html", "utf-8", null);
+//				alert.setView(adView);
+//				alert.setCustomTitle(null);
+//
+//				final AlertDialog dialog = alert.create();
+//
+//				dialog.setCanceledOnTouchOutside(true);
+//				dialog.setOnCancelListener(dialog1 -> {
+//					dialog1.dismiss();
+//					work.returnToWork(true);
+//				});
+//				dialog.show();
+//			}
+//			);
+//		} else {
+//			work.returnToWork(true);
+//		}
 	}
 }

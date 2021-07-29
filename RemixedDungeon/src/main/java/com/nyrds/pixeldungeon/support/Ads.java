@@ -17,9 +17,9 @@ public class Ads {
     }
 
     public static void displayEasyModeBanner() {
-        if (!isSmallScreen()) {
-            AdsUtilsCommon.displayTopBanner();
-        }
+//        if (!isSmallScreen()) {
+//            AdsUtilsCommon.displayTopBanner();
+//        }
     }
 
     public static boolean isRewardVideoReady(){
@@ -27,47 +27,47 @@ public class Ads {
     }
 
     public static void showRewardVideo(final InterstitialPoint work) {
-        AdsUtilsCommon.showRewardVideo(work);
+//        AdsUtilsCommon.showRewardVideo(work);
     }
 
     public static void displaySaveAndLoadAd(final InterstitialPoint work) {
-        AdsUtilsCommon.showInterstitial(work);
+//        AdsUtilsCommon.showInterstitial(work);
     }
 
     public static void removeEasyModeBanner() {
-        Game.instance().runOnUiThread(() -> {
-            int index = AdsUtils.bannerIndex();
-            if (index >= 0) {
-
-                View adview = Game.instance().getLayout().getChildAt(index);
-                AdsUtils.removeBannerView(index, adview);
-
-            }
-        });
+//        Game.instance().runOnUiThread(() -> {
+//            int index = AdsUtils.bannerIndex();
+//            if (index >= 0) {
+//
+//                View adview = Game.instance().getLayout().getChildAt(index);
+//                AdsUtils.removeBannerView(index, adview);
+//
+//            }
+//        });
     }
 
     static void updateBanner(final View view) {
-        Game.instance().runOnUiThread(() -> {
-
-            int index = AdsUtils.bannerIndex();
-            final LinearLayout layout = Game.instance().getLayout();
-
-            if (index >= 0) {
-
-                View adview = layout.getChildAt(index);
-                if(adview == view) {
-                    return;
-                }
-
-                AdsUtils.removeBannerView(index, adview);
-
-            }
-
-            try {
-                layout.addView(view, 0);
-            } catch (IllegalStateException e) {
-                EventCollector.logException(e);
-            }
-        });
+//        Game.instance().runOnUiThread(() -> {
+//
+//            int index = AdsUtils.bannerIndex();
+//            final LinearLayout layout = Game.instance().getLayout();
+//
+//            if (index >= 0) {
+//
+//                View adview = layout.getChildAt(index);
+//                if(adview == view) {
+//                    return;
+//                }
+//
+//                AdsUtils.removeBannerView(index, adview);
+//
+//            }
+//
+//            try {
+//                layout.addView(view, 0);
+//            } catch (IllegalStateException e) {
+//                EventCollector.logException(e);
+//            }
+//        });
     }
 }
