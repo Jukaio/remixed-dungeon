@@ -2,6 +2,7 @@ package com.nyrds.platform;
 
 import android.content.Intent;
 
+import com.badlogic.gdx.ApplicationListener;
 import com.nyrds.pixeldungeon.mobs.npc.SociologistNPC;
 import com.watabou.noosa.InterstitialPoint;
 import com.watabou.pixeldungeon.ui.ImageButton;
@@ -9,7 +10,7 @@ import com.watabou.pixeldungeon.ui.ImageButton;
 import java.io.InputStream;
 
 // Port Android Activity so we can use it the same way on desktop!
-public class LibgdxActivity {
+public class LibgdxActivity implements ApplicationListener {
     public final void runOnUiThread (Runnable action)
     {
         
@@ -34,5 +35,36 @@ public class LibgdxActivity {
 
     public String[] fileList() {
         return null;
+    }
+
+    // GDX
+    @Override
+    public void create() {
+
+    }
+
+    @Override
+    public void resize(int width, int height) {
+
+    }
+
+    @Override
+    public void render() {
+
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void dispose() {
+
     }
 }

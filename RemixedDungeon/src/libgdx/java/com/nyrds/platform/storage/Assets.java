@@ -1,5 +1,6 @@
 package com.nyrds.platform.storage;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class Assets {
@@ -11,7 +12,7 @@ public class Assets {
         return null;
     }
 
-    public static InputStream getStream(String resName) {
-        return null;
+    public static InputStream getStream(String resName) throws IOException {
+        throw new IOException("No IO implemented");
     }
 }

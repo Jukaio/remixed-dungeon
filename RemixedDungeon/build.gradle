@@ -99,8 +99,10 @@ android {
 
         libgdx {
             dimension "platform"
+            packagingOptions {
+                exclude 'META-INF/INDEX.LIST'
+            }
         }
-
         none {
             dimension "market"
         }
@@ -115,8 +117,6 @@ android {
     }
 
 }
-
-
 
 dependencies {
     implementation project(':annotation')
@@ -165,7 +165,7 @@ dependencies {
     huaweiImplementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
 
     libgdxImplementation "com.badlogicgames.gdx:gdx:$gdxVersion"
-    libgdxImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    libgdxImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
     libgdxImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
     libgdxImplementation 'com.appodeal.ads.sdk:core:2.9.2'
     libgdxImplementation 'com.appodeal.ads.sdk.networks:adcolony:2.9.2.11'

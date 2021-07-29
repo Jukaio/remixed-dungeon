@@ -46,6 +46,10 @@ public class Texture {
 
     }
 
+    // TODO: Change bitmap usage in SmartTexture
+    public <T> void handMade(T t, boolean b) {
+
+    }
 
 
     public static Texture create( int width, int height, int[] pixels ) {

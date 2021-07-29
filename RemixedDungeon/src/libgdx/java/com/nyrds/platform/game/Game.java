@@ -37,6 +37,10 @@ public class Game extends LibgdxActivity {
 
     private static volatile boolean paused = true;
 
+    public Game() {
+
+    }
+
     public Game(Class<TitleScene> titleSceneClass) {
     }
 
